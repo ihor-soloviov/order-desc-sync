@@ -11,7 +11,6 @@ const headers = {
   "Content-Type": "application/json",
 };
 
-
 const synchronizeNewOrders = async () => {
   try {
     const response = await axios.get("https://app.orderdesk.me/api/v2/orders/new", { headers })
@@ -22,4 +21,5 @@ const synchronizeNewOrders = async () => {
   }
 };
 
-scheduleJob('43 13 * * *', synchronizeNewOrders);
+// scheduleJob('0 * * * *', synchronizeNewOrders);
+synchronizeNewOrders()
